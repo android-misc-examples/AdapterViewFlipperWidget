@@ -97,7 +97,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 if (action.equals(NEXT_ACTION)) rv.showNext(R.id.page_flipper);
                 else rv.showPrevious(R.id.page_flipper);
 
-                AppWidgetManager.getInstance(context).partiallyUpdateAppWidget(
+                AppWidgetManager.getInstance(context).updateAppWidget(
                         intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
                                 AppWidgetManager.INVALID_APPWIDGET_ID), rv);
                 break;
