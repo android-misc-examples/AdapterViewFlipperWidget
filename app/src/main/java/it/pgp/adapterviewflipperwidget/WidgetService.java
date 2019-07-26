@@ -37,32 +37,32 @@ public class WidgetService extends RemoteViewsService {
 
 		@Override
 		public void onCreate() {
-			Log.i(TAG, "onCreate()");
+			Log.d(TAG, "onCreate()");
 
 		}
 
 		@Override
 		public void onDataSetChanged() {
-			Log.i(TAG, "onDataSetChanged()");
+			Log.d(TAG, "onDataSetChanged()");
 
 			mUpdateDate = new Date();
 		}
 
 		@Override
 		public void onDestroy() {
-			Log.i(TAG, "onDestroy()");
+			Log.d(TAG, "onDestroy()");
 		}
 
 		@Override
 		public int getCount() {
-			Log.i(TAG, "getCount() " + mLayoutIds.length);
+			Log.d(TAG, "getCount() " + mLayoutIds.length);
 
 			return mLayoutIds.length;
 		}
 
 		@Override
 		public RemoteViews getViewAt(int position) {
-			Log.i(TAG, "getViewAt()" + position);
+			Log.d(TAG, "getViewAt()" + position);
 
 			RemoteViews page = new RemoteViews(getPackageName(), mLayoutIds[position]);
 			SimpleDateFormat sdf = (SimpleDateFormat) SimpleDateFormat
@@ -74,28 +74,28 @@ public class WidgetService extends RemoteViewsService {
 
 		@Override
 		public RemoteViews getLoadingView() {
-			Log.i(TAG, "getLoadingView()");
+			Log.d(TAG, "getLoadingView()");
 
 			return new RemoteViews(getPackageName(), R.layout.loading);
 		}
 
 		@Override
 		public int getViewTypeCount() {
-			Log.i(TAG, "getViewTypeCount()");
+			Log.d(TAG, "getViewTypeCount()");
 
 			return mLayoutIds.length;
 		}
 
 		@Override
 		public long getItemId(int position) {
-			Log.i(TAG, "getItemId()");
+			Log.d(TAG, "getItemId()");
 
 			return position;
 		}
 
 		@Override
 		public boolean hasStableIds() {
-			Log.i(TAG, "hasStableIds()");
+			Log.d(TAG, "hasStableIds()");
 
 			return true;
 		}
